@@ -23,3 +23,17 @@ jobs:
 
       - name: Run tests
         run: npm test
+  deploy:
+    runs-on: self-hosted
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build and Deploy with Docker
+        run: docker compose up -d --build --remove-orphans
+
+      - name: Cleanup old images
+        run: docker image prune -f
