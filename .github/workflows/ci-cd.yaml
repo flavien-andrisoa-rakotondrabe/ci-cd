@@ -2,15 +2,14 @@ name: CI/CD Next.js
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["main", "develop"]
     types: [opened, synchronize, reopened]
   push:
-    branches: ["main"]
+    branches: ["main", "develop"]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' || github.event_name == 'push'
     steps:
       - uses: actions/checkout@v3
 
