@@ -2,8 +2,8 @@
 @import 'tailwindcss';
 
 :root {
-  /* --primary-color: #2323fe; */
-  --primary-color: #00bc7d;
+  --primary-color: #2323fe;
+  /* --primary-color: #00bc7d; */
 }
 
 *,
@@ -13,7 +13,8 @@
 }
 
 .bg-img {
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)),
+  background:
+    linear-gradient(to left, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)),
     center center / cover url('/bg.webp');
 }
 
